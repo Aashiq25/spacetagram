@@ -2,46 +2,41 @@ import { Component } from 'react'
 import like from '../assets/like.svg'
 import likeBlue from '../assets/like-blue.svg'
 export default class ImageCards extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isLiked: false,
-        }
-    }
-    likeImage(e) {
-        e.stopPropagation()
-        this.setState({ isLiked: !this.state.isLiked })
-    }
-
     render() {
+        const imgData = this.props.imgData
         return (
             <div onClick={this.props.onClick} className="sp-img-card">
-                <img
-                    src={this.props.imgData.hdurl}
-                    className="img-container"
-                    alt={this.props.imgData.title}
-                ></img>
+                {imgData?.media_type === 'image' ? (
+                    <img
+                        src={imgData.url}
+                        className="img-container"
+                        alt={imgData.title}
+                    ></img>
+                ) : (
+                    <iframe
+                        src={imgData.url}
+                        frameBorder="0"
+                        className="img-container"
+                        title={imgData.title}
+                    ></iframe>
+                )}
                 <div className="img-info">
-                    <div className="img-title">{this.props.imgData.title}</div>
-                    <div className="img-desc">
-                        {this.props.imgData.explanation}
-                    </div>
+                    <div className="img-title">{imgData.title}</div>
+                    <div className="img-desc">{imgData.explanation}</div>
                     <div className="img-secondary-attr">
-                        <div className="date-field">
-                            {this.props.imgData.date}
-                        </div>
+                        <div className="date-field">{imgData.date}</div>
                         <div
-                            onClick={(e) => this.likeImage(e)}
+                            onClick={(e) => this.props.likeImage(e)}
                             className={`like-btn ${
-                                this.state.isLiked ? 'is-liked' : ''
+                                imgData.isLiked ? 'is-liked' : ''
                             }`}
                         >
                             <img
-                                src={this.state.isLiked ? likeBlue : like}
+                                src={imgData.isLiked ? likeBlue : like}
                                 className="img-like"
                                 alt="Like"
                             ></img>
-                            {this.state.isLiked ? 'Liked' : 'Like'}
+                            {imgData.isLiked ? 'Liked' : 'Like'}
                         </div>
                     </div>
                 </div>
