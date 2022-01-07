@@ -46,7 +46,10 @@ export default class Body extends Component {
         let response = await axios.get(
             `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&start_date=${this.state.dateRange[0]}&end_date=${this.state.dateRange[1]}`
         )
-        this.setState({ imagesList: response?.data || [], isLoading: false })
+        this.setState({
+            imagesList: response.data.reverse() || [],
+            isLoading: false,
+        })
     }
 
     render() {
@@ -57,7 +60,7 @@ export default class Body extends Component {
                     <Loader></Loader>
                 ) : (
                     <div className="sp-body">
-                        {this.state.imagesList.reverse().map((imgData, id) => (
+                        {this.state.imagesList.map((imgData, id) => (
                             <ImageCard
                                 onClick={() => this.openDialog(imgData)}
                                 imgData={imgData}
