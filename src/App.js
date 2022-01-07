@@ -2,6 +2,7 @@ import './App.css'
 import './scss/all-styles.scss'
 import Header from './pages/Header'
 import SpBody from './pages/SpBody'
+import 'rsuite/dist/rsuite.min.css'
 
 function App() {
     return (
