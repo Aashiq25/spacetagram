@@ -3,6 +3,7 @@ import SpHeader from './pages/SpHeader'
 import SpBody from './pages/SpBody'
 import LikedPosts from './pages/LikedPosts'
 import 'rsuite/dist/rsuite.min.css'
+
 import { Routes, Route } from 'react-router-dom'
 
 function App() {

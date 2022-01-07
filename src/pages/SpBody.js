@@ -21,7 +21,6 @@ export default class Body extends Component {
     }
 
     componentDidMount() {
-        console.log(getLikedPosts())
         this.fetchNasaData()
         eventBus.on('dateRangeChange', ({ dateRange }) => {
             this.setState(
