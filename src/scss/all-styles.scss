@@ -15,11 +15,98 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
     .sp-body {
+        height: calc(100vh - 100px);
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding: 20px;
+        overflow-y: scroll;
+    }
+    .sp-img-card {
+        width: 100%;
+        height: 600px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background-color: #fff;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
+        box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+        &:hover {
+            box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .img-container {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .img-info {
+            padding: 15px;
+            .img-title {
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .img-desc {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #70757a;
+                text-align: justify;
+                text-overflow: ellipsis;
+                height: 72px;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                overflow: hidden;
+            }
+        }
+        .img-secondary-attr {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+            align-items: center;
+            .date-field {
+                font-size: 16px;
+                color: #70757a;
+            }
+            .like-btn {
+                display: flex;
+                flex-direction: row;
+                justify-items: center;
+                align-items: center;
+                padding: 10px;
+                width: 70px;
+                height: 20px;
+                font-weight: bold;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                &.is-liked {
+                    color: rgb(32, 120, 244);
+                }
+                .img-like {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 10px;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    .sp-loader {
+        display: flex;
+        width: 100vw;
+        height: calc(100vh - 100px);
         justify-content: center;
         align-items: center;
-        padding: 20px;
     }
 }
 
