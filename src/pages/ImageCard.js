@@ -8,13 +8,14 @@ export default class ImageCards extends Component {
             isLiked: false,
         }
     }
-    likeImage() {
+    likeImage(e) {
+        e.stopPropagation()
         this.setState({ isLiked: !this.state.isLiked })
     }
 
     render() {
         return (
-            <div className="sp-img-card">
+            <div onClick={this.props.onClick} className="sp-img-card">
                 <img
                     src={this.props.imgData.hdurl}
                     className="img-container"
@@ -30,7 +31,7 @@ export default class ImageCards extends Component {
                             {this.props.imgData.date}
                         </div>
                         <div
-                            onClick={() => this.likeImage()}
+                            onClick={(e) => this.likeImage(e)}
                             className={`like-btn ${
                                 this.state.isLiked ? 'is-liked' : ''
                             }`}

@@ -4,6 +4,7 @@ import ImageCard from './ImageCard'
 import Loader from './Loader'
 import eventBus from '../helpers/eventBus'
 import moment from 'moment'
+import SpDialog from './SpDialog'
 export default class Body extends Component {
     state = {
         isLoading: true,
@@ -12,6 +13,8 @@ export default class Body extends Component {
             moment(Date.now() - 6 * 24 * 3600 * 1000).format('yyyy-MM-DD'),
             moment(Date.now()).format('yyyy-MM-DD'),
         ],
+        showDialog: false,
+        dialogData: {},
     }
 
     componentDidMount() {
@@ -31,6 +34,13 @@ export default class Body extends Component {
         })
     }
 
+    openDialog(data) {
+        this.setState({ showDialog: true, dialogData: data })
+    }
+    closeDialog() {
+        this.setState({ showDialog: false, dialogData: {} })
+    }
+
     async fetchNasaData() {
         this.setState({ isLoading: true })
         let response = await axios.get(
@@ -48,9 +58,20 @@ export default class Body extends Component {
                 ) : (
                     <div className="sp-body">
                         {this.state.imagesList.reverse().map((imgData, id) => (
-                            <ImageCard imgData={imgData} key={id}></ImageCard>
+                            <ImageCard
+                                onClick={() => this.openDialog(imgData)}
+                                imgData={imgData}
+                                key={id}
+                            ></ImageCard>
                         ))}
                     </div>
+                )}
+                {this.state.showDialog && (
+                    <SpDialog
+                        dialogData={this.state.dialogData}
+                        showDialog={this.state.showDialog}
+                        closeDialog={() => this.closeDialog()}
+                    ></SpDialog>
                 )}
             </div>
         )
