@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
+import './scss/all-styles.scss'
+import Header from './pages/Header'
+import SpBody from './pages/SpBody'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="sp-home">
+            <Header></Header>
+            <SpBody></SpBody>
+        </div>
+    )
 }
 
-export default App;
+export default App
