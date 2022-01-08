@@ -22,7 +22,7 @@ const SpHeader = () => {
                         <div className="pl-10 title-text">Spacetagram</div>
                     </div>
                 </Link>
-                {useLocation().pathname === '/' && (
+                {useLocation()?.pathname === '/' && (
                     <div>
                         <DateRangePicker
                             value={dateRange}
@@ -43,7 +43,7 @@ const SpHeader = () => {
                     <Link
                         to="/liked-posts"
                         className={`sec-heading ${
-                            useLocation().pathname === '/liked-posts'
+                            useLocation()?.pathname === '/liked-posts'
                                 ? 'current'
                                 : ''
                         }`}

@@ -3,6 +3,7 @@ import ImageCard from './ImageCard'
 import SpDialog from './SpDialog'
 
 import { getLikedPosts, setLikedPosts } from '../helpers/storageHelper'
+import NoData from './NoData'
 
 export default class LikedPosts extends Component {
     state = {
@@ -42,16 +43,20 @@ export default class LikedPosts extends Component {
         return (
             <div>
                 <div className="sp-body">
-                    {Object.keys(imagesList).map((key, id) => (
-                        <ImageCard
-                            onClick={() => this.openDialog(imagesList[key])}
-                            likeImage={(e) =>
-                                this.likeImage(e, imagesList[key])
-                            }
-                            imgData={imagesList[key]}
-                            key={id}
-                        ></ImageCard>
-                    ))}
+                    {Object.keys(imagesList).length === 0 ? (
+                        <NoData></NoData>
+                    ) : (
+                        Object.keys(imagesList).map((key, id) => (
+                            <ImageCard
+                                onClick={() => this.openDialog(imagesList[key])}
+                                likeImage={(e) =>
+                                    this.likeImage(e, imagesList[key])
+                                }
+                                imgData={imagesList[key]}
+                                key={id}
+                            ></ImageCard>
+                        ))
+                    )}
                 </div>
                 {this.state.showDialog && (
                     <SpDialog
