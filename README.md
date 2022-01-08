@@ -1,70 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spacetagram
 
-## Available Scripts
+- [Live](https://aashiq-spacetagram.netlify.app)
 
-In the project directory, you can run:
 
-### `npm start`
+## Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To Build an front end web application to view and like photos fetched from using NASA API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We are using Astronomy Picture of the Day API to fetch data for particular date range - [APOD](https://api.nasa.gov/#apod)
 
-### `npm test`
+## Deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To deploy this project in local machine run
 
-### `npm run build`
+```bash
+  npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Liked Posts with local storage
+- Loader for NASA API
+- Date range filter
+- Responsive web layout
+- 404 and No Data state
+- Popup Dialog for advanced view
 
-### `npm run eject`
+## Technology and Tools used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Built on [React JS](https://reactjs.org/) using local storage, [React router](https://reactrouter.com/) and [React suite](https://rsuitejs.com/)
+- Styled using [Sass/Scss](https://sass-lang.com/)
+- Hosted on [Netlify](https://www.netlify.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Home Page with date range filter
+<img width="1440" alt="Home Page with date range filter" src="https://user-images.githubusercontent.com/44645166/148627395-6226048d-117e-48ac-9ca1-a70f742e12c3.png">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Liked Posts
+<img width="1440" alt="Liked Posts" src="https://user-images.githubusercontent.com/44645166/148627399-61ce605c-f16a-477e-90e4-a72f06d5dd1c.png">
 
-## Learn More
+* Advanced View Popup Dialog
+<img width="1439" alt="Advanced View Popup Dialog" src="https://user-images.githubusercontent.com/44645166/148627401-b291e2ec-c759-40ef-b83a-75dfea055994.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Responsive Web Pages - Mobile View
+<img width="600" alt="Mobile View" src="https://user-images.githubusercontent.com/44645166/148627402-b09ecbf2-6860-465b-bb2e-f7f5fdd0025c.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Responsive Web Pages - Tablet Mode
+<img width="600" alt="Tablet Mode" src="https://user-images.githubusercontent.com/44645166/148627403-54e8687e-7ade-4d6b-a6d8-abbeb4cdfa77.png">
 
-### Code Splitting
+* Loading State
+<img width="1279" alt="Loading State" src="https://user-images.githubusercontent.com/44645166/148627632-04764961-3ccd-46c1-9401-a26997e8729a.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* No Data
+<img width="1424" alt="No Data" src="https://user-images.githubusercontent.com/44645166/148627633-fe25ab0e-86b5-47dd-997e-dbf31af033e5.png">
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🚀 About Me
+I'm a full stack developer focused on building scalable and reliable software systems
+- [LinkedIn](https://www.linkedin.com/in/muhamed-aashiq/)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Feedback
 
-### Advanced Configuration
+If you have any feedback, please reach me at muhamedaashiqtce@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
