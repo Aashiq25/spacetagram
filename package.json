@@ -10,7 +10,7 @@
         "react-router-dom": "^6.2.1",
         "react-scripts": "5.0.0",
         "react-spinners": "^0.11.0",
-        "rsuite": "^5.4.4",
+        "rsuite": "^5.19.0",
         "sass": "^1.46.0"
     },
     "scripts": {
